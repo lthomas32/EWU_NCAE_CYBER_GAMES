@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # this script adds or deletes port forwarding, it's still raw and will be updated
+# note that the script is case sensitive for now, when asking for your input 
 read -p "Would you like to add or remove " op
 read -p "Enter zone " zone
 read -p "Enter first port " p1
