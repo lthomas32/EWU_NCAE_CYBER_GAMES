@@ -13,6 +13,8 @@ sudo firewall-cmd --reload
 sudo firewall-cmd --zone=external --permanent --remove-service=ssh   // Block ssh connections from external side
 sudo firewall-cmd --zone=external --permanent --add-service=ssh
 
+sudo firewall-cmd --zone =external --permanent --add-masquerade
+
 //Port forwarding
 sudo firewall-cmd  --zone=external --pemanent --add-forward-port=port=80:proto=tcp:toport=80:toaddr=192.168.8.2
 // reload after making changes
