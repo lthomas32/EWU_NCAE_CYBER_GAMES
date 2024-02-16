@@ -1,0 +1,17 @@
+sudo systemctl restart network
+systemctl status sshd
+
+
+//Some firewall commands
+
+sudo firewall-cmd --list-all --zone=external   
+sudo firewall-cmd --reload
+sudo firewall-cmd --zone=external --permanent --remove-service=ssh   // Block ssh connections from external side
+sudo firewall-cmd --zone=external --permanent --add-service=ssh
+
+//Port forwarding
+sudo firewall-cmd  --zone=external --pemanent --add-forward-port=port=80:proto=tcp:toport=80:toaddr=192.168.8.2
+// reload after making changes
+
+//Route dns trafic
+sudo firewall-cmd  --zone=external --pemanent --add-forward-port=port=53:proto=udp:toport=53:toaddr=192.168.8.2
