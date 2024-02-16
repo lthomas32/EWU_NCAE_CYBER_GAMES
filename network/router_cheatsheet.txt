@@ -2,7 +2,9 @@ sudo systemctl restart network
 systemctl status sshd
 
 // Assign zone to an interface
-sudo firewall-cmd --change-interface=eth0 --zone=internal
+sudo firewall-cmd --change-interface=eth0 --zone=internal  //possibly add --permanent
+
+
 
 //Some firewall commands
 
