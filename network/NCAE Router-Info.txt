@@ -1,0 +1,28 @@
+﻿To add ip (centOS router):
+Sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
+Ipaddr: add ip 
+Netmask: add netmask (255.255.0.0 etc)
+Can add zone= external / internal etc
+Sudo systemctl restart network
+Look at internal and external zones for rules under 
+Sudo firewall-cmd –list-all-zones –zone = “extrenal/interal” or just list all zones
+–permanent will survive restart 
+Sudo firewall-cmd –reload
+–add-forward-port = port 80:proto=tcp:toport = 80: toaddr = 192.168.xxx.2 (web server ip) – permanent (forwards tcp traffick through router on port 80 to web server on port 80)
+
+
+Ubuntu webserver:
+/etc/netplan/ (yaml file)
+Gateway4: 192.168.xxx.1 (router address)
+
+
+Sudo systemctl start apache2
+Sudo nano /var/www/html/index.html
+
+
+Kali:
+Sudo nano /etc/network/interfaces
+Address
+Netmask
+Gateway 192.168.xxx.1 (router ip for internal)
+Sudo systemctl restart networking
