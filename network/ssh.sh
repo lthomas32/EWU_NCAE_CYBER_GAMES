@@ -1,3 +1,5 @@
+# Script that compares authorized ssh keys to the provided ones by the user, provided keys must be in a file. Each line is one key
+# Needs testing
 #!/bin/bash
 
 # Path to the provided SSH keys file
