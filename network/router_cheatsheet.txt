@@ -21,3 +21,7 @@ sudo firewall-cmd  --zone=external --pemanent --add-forward-port=port=80:proto=t
 
 //Route dns trafic
 sudo firewall-cmd  --zone=external --pemanent --add-forward-port=port=53:proto=udp:toport=53:toaddr=192.168.8.2
+
+
+
+!!!!!!!!!!!! Specify gateway on the internal interface to be itself       192.168.1.1
